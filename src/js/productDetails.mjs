@@ -16,7 +16,9 @@ export default async function productDetails(productId) {
 }
 
 function addToCart() {
-  setLocalStorage("so-cart", product);
+  setLocalStorage("so-cart", cartItems);
+
+  cartItems.push(product);
 }
 
 function renderProductDetails() {
