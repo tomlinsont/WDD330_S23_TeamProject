@@ -2,7 +2,7 @@ import { findProductById } from "./productData.mjs";
 import { setLocalStorage } from "./utils.mjs";
 
 let product = {};
-const cartItems = [];
+//const cartItems = [];
 
 export default async function productDetails(productId) {
   // get the details for the current product. findProductById will return a promise! use await or .then() to process it
@@ -16,9 +16,9 @@ export default async function productDetails(productId) {
 }
 
 function addToCart() {
-  setLocalStorage("so-cart", cartItems);
+  setLocalStorage("so-cart", product);
 
-  cartItems.push(product);
+  //cartItems.push(product);
 }
 
 function renderProductDetails() {
