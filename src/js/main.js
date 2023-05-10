@@ -1,4 +1,4 @@
 import { productList } from "./productList.mjs";
 
-
-productList(".product-list", "tents");
+console.log(productList(".product-list", "tents"));
+//productList(".product-list", "tents");
