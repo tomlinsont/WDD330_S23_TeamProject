@@ -1,5 +1,4 @@
 import { getLocalStorage, renderListWithTemplate } from "./utils.mjs";
-import { loadHeaderFooter } from "./utils.mjs";
 
 export default function ShoppingCart() {
   const cartItems = getLocalStorage("so-cart");
@@ -25,5 +24,3 @@ function cartItemTemplate(item) {
 
   return newItem;
 }
-
-loadHeaderFooter();

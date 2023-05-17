@@ -5,5 +5,4 @@ import { loadHeaderFooter } from "./utils.mjs";
 const productId = getParam('product');
 
 productDetails(productId);
-
 loadHeaderFooter();
