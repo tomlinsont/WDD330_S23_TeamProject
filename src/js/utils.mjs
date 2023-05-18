@@ -27,14 +27,14 @@ export function setClick(selector, callback) {
 export function getParam(param) {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
-  const product = urlParams.get('product');
+  const product = urlParams.get("product");
   return product;
 }
-
 export function renderListWithTemplate(
   templateFn,
   parentElement,
-  list,
+  data,
+  callback,
   position = "afterbegin",
   clear = true
 ) {
@@ -68,12 +68,12 @@ export async function renderWithTemplate(
   if (callback) {
     callback(data);
   }
-}
 
 function loadTemplate(path) {
   // wait what?  we are returning a new function? 
   // this is called currying and can be very helpful.
   return async function () {
+
     const res = await fetch(path);
     if (res.ok) {
       const html = await res.text();
