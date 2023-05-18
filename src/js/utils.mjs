@@ -27,28 +27,53 @@ export function setClick(selector, callback) {
 export function getParam(param) {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
-  const product = urlParams.get('product');
+  const product = urlParams.get("product");
   return product;
 }
-/*
-export function renderListWithTemplate(
-  templateFn,
+
+export async function renderWithTemplate(
+  template,
   parentElement,
-  list,
+  data,
+  callback,
   position = "afterbegin",
   clear = true
 ) {
   if (clear) {
     parentElement.innerHTML = "";
   }
-  const htmlString = list.map(templateFn);
-  parentElement.insertAdjacentHTML(position, htmlString.join(""));
-}*/
+  const htmlString = await template(data);
+  parentElement.insertAdjacentHTML(position, htmlString);
+  if (callback) {
+    callback(data);
+  }
+}
 
 export function renderListWithTemplate(template, parent, list, callback) {
-    list.forEach(item => {
-      const clone = template.content.cloneNode(true);
-      const templateWithData = callback(clone, item);
-      parent.appendChild(templateWithData);
-    })
-  }
+  list.forEach((item) => {
+    const clone = template.content.cloneNode(true);
+    const templateWithData = callback(clone, item);
+    parent.appendChild(templateWithData);
+  });
+}
+
+function loadTemplate(path) {
+  // wait what?  we are returning a new function? 
+  // this is called currying and can be very helpful.
+  return async function () {
+      const res = await fetch(path);
+      if (res.ok) {
+      const html = await res.text();
+      return html;
+      }
+  };
+} 
+
+export function loadHeaderFooter() {
+  const headerTemplate = loadTemplate("/partials/header.html");
+  const footerTemplate = loadTemplate("/partials/footer.html");
+  const headerEl = document.querySelector("#main-header");
+  const footerEl = document.querySelector("#main-footer");
+  renderWithTemplate(headerTemplate, headerEl);
+  renderWithTemplate(footerTemplate, footerEl);
+}
