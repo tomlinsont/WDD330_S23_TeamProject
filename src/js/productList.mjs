@@ -1,11 +1,12 @@
 import { getData } from "./productData.mjs";
 import { renderListWithTemplate } from "./utils.mjs";
 
-
+/*
 function renderList(list, elem) {
     const htmlStrings =  list.map(productCardTemplate);
     CustomElementRegistry.insertAdjacentHTML('afterbegin', htmlStrings.join(''));
 }
+*/
 
 function productCardTemplate(product) {
     return `<li class="product-card">
@@ -18,10 +19,10 @@ function productCardTemplate(product) {
       <h2 class="card__name">${product.NameWithoutBrand}</h2>
       <p class="product-card__price">$${product.FinalPrice}</p></a
     >
-  </li>`
+  </li>`;
 }
 
-export  async function productList(selector, category) {
+export default async function productList(selector, category) {
 
     // get the element we will insert the list into from the selector
     const elem = document.querySelector(selector);
