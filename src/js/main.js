@@ -1,6 +1,6 @@
-import { productList } from './productList.mjs';
+import  productList  from './productList.mjs';
 import { loadHeaderFooter } from './utils.mjs';
 
-console.log(productList('.product-list', 'tents'));
+//console.log(productList('.product-list', 'tents'));
 loadHeaderFooter();
-//productList(".product-list", "tents");
+productList(".product-list", "tents");
