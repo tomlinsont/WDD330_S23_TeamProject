@@ -27,14 +27,13 @@ export function setClick(selector, callback) {
 export function getParam(param) {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
-  const product = urlParams.get("product");
-  return product;
+  return urlParams.get("product");
 }
+
 export function renderListWithTemplate(
   templateFn,
   parentElement,
-  data,
-  callback,
+  list,
   position = "afterbegin",
   clear = true
 ) {
@@ -56,7 +55,8 @@ export function renderListWithTemplate(template, parent, list, callback) {
 export async function renderWithTemplate(
   template,
   parentElement,
-  data, callback,
+  data,
+  callback,
   position = "afterbegin",
   clear = true
 ) {

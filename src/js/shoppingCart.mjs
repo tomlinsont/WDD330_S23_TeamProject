@@ -7,7 +7,7 @@ export function renderCartContents() {
     document.querySelector('.product-list').innerHTML = htmlItems.join('');
 }*/
 
-export function shoppingCart() {
+export default function shoppingCart() {
     const cartItems = getLocalStorage('so-cart');
     console.log("cart Items: ", cartItems);
     const outputEl  = document.querySelector('.product-list');
