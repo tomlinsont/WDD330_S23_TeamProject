@@ -68,6 +68,7 @@ export async function renderWithTemplate(
   if (callback) {
     callback(data);
   }
+}
 
 function loadTemplate(path) {
   // wait what?  we are returning a new function? 
