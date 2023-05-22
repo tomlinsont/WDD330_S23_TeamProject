@@ -56,7 +56,7 @@ export async function renderWithTemplate(
     parentElement.innerHTML = "";
   }
   const htmlString = await template(data);
-  //console.log("htmlString: ", htmlString);
+  
   parentElement.insertAdjacentHTML(position, htmlString);
   if (callback) {
     callback(data);
