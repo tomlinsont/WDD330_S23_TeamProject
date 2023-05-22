@@ -14,6 +14,10 @@ export default async function productDetails(productId) {
   document.getElementById("addToCart").addEventListener("click", addToCart);
 }
 
+function totalCartItems() {
+
+}
+
 function addToCart() {
   let cartContents = getLocalStorage("so-cart");
   
@@ -22,7 +26,10 @@ function addToCart() {
   }
 
   cartContents.push(product);
-  setLocalStorage("so-cart", cartContents);  
+  setLocalStorage("so-cart", cartContents); 
+  for(let i=0; i < cartContents.length; i++){ 
+  console.log("cartContents: ", cartContents[i]);
+  }
 }
 
 function renderProductDetails() {

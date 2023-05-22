@@ -1,9 +1,9 @@
-import { getLocalStorage, renderWithTemplate } from "./utils.mjs";
+import { getLocalStorage, renderListWithTemplate } from "./utils.mjs";
 
 export default function ShoppingCart() {
   const cartItems = getLocalStorage("so-cart");
   const outputEl = document.querySelector(".product-list");
-  renderWithTemplate(cartItemTemplate, outputEl, cartItems);
+  renderListWithTemplate(cartItemTemplate, outputEl, cartItems);
 }
 
 function cartItemTemplate(item) {
