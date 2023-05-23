@@ -96,6 +96,23 @@ button {
 }
 /* End utility classes */
 
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20%;
+  grid-column-gap: 5%;
+  list-style-type: none;
+}
+
+.product-grid li {
+  /* border: black solid 1px;*/
+  text-align: center;
+  color: #000;
+  font-weight: 600;
+  font-size: 1.75rem;
+}
+/* End Product Grid */
+
 /* Cart icon styles */
 .cart {
   padding-top: 1em;
