@@ -21,6 +21,7 @@ function addToCart() {
     cartContents = [];
   }
 
+  //Remember to update item count in localstorage **
   cartContents.push(product);
   setLocalStorage("so-cart", cartContents); 
   for(let i=0; i < cartContents.length; i++){ 
