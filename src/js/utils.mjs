@@ -83,3 +83,24 @@ export function loadHeaderFooter() {
   renderWithTemplate(headerTemplate, headerEl);
   renderWithTemplate(footerTemplate, footerEl);
 }
+
+function totalProduct() {
+  //Get array from localstorage
+  const cart = getLocalStorage(cartCountKey);
+  //[ {id:"dsa`l;fkjsadf", count:1}, ]
+
+  //count # items in each item`
+  let count = 0;
+  if(cart) {
+    count = cart.length();
+  }
+  //get the element to update
+  //update element text
+let totalOfProducts = 0
+
+const countProducts= document.querySelector("·countproducts")
+countProducts.innerText = totalOfProducts;
+
+if (newItem == true ) { //newITem function inside shoppingCart
+  totalOfProducts++
+} }
