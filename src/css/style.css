@@ -56,6 +56,9 @@ header {
   bottom: -10px;
   background-color: white;
 }
+.hide {
+  display: none;
+}
 .logo--square {
   font-size: var(--small-font);
   width: 110px;
