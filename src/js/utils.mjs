@@ -84,6 +84,9 @@ export function loadHeaderFooter() {
   renderWithTemplate(footerTemplate, footerEl);
 }
 
+
+
+
 function totalProduct() {
   //Get array from localstorage
   const cart = getLocalStorage(cartCountKey);
@@ -91,16 +94,13 @@ function totalProduct() {
 
   //count # items in each item`
   let count = 0;
-  if(cart) {
-    count = cart.length();
+    if(cart) {
+      count = cart.length();
   }
   //get the element to update
+  let allProducts = allProducts.map(count)
   //update element text
-let totalOfProducts = 0
+  const countProducts= document.querySelector("#countproducts")
+  countProducts.innerText = allProducts;
 
-const countProducts= document.querySelector("·countproducts")
-countProducts.innerText = totalOfProducts;
-
-if (newItem == true ) { //newITem function inside shoppingCart
-  totalOfProducts++
-} }
+} 
