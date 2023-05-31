@@ -1,3 +1,4 @@
+import { addToCart } from "./productDetails.mjs";
 // wrapper for querySelector...returns matching element
 export function qs(selector, parent = document) {
   return parent.querySelector(selector);
@@ -89,7 +90,7 @@ export function loadHeaderFooter() {
 
 function totalProduct() {
   //Get array from localstorage
-  const cart = getLocalStorage(cartCountKey);
+  const cart = getLocalStorage(addToCart);
   //[ {id:"dsa`l;fkjsadf", count:1}, ]
 
   //count # items in each item`

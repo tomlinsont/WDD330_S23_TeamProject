@@ -14,7 +14,7 @@ export default async function productDetails(productId) {
   document.getElementById("addToCart").addEventListener("click", addToCart);
 }
 
-function addToCart() {
+export function addToCart() {
   let cartContents = getLocalStorage("so-cart");
   
   if(!cartContents) {
