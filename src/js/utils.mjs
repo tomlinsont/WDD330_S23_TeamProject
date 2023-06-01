@@ -1,3 +1,5 @@
+import productDetails from "./productDetails.mjs";
+import cartContents from "./productDetails.mjs";
 // wrapper for querySelector...returns matching element
 export function qs(selector, parent = document) {
   return parent.querySelector(selector);
@@ -83,3 +85,46 @@ export function loadHeaderFooter() {
   renderWithTemplate(headerTemplate, headerEl);
   renderWithTemplate(footerTemplate, footerEl);
 }
+
+
+
+
+function totalProduct() {
+//   //Get array from localstorage
+  let cart = getLocalStorage("so-cart");
+  let getItem = JSON.parse(localStorage.getItem("Id"));
+
+    //[ {id:"dsa`l;fkjsadf", count:1}, ]
+   if(!cart) {
+     cart = [];
+     cart.push(getItem);
+      console.log(cart);
+    
+   }
+    // update count
+ // let count = 0;
+  // for each
+  //   for(let i=0; i < cart.length; i++){ 
+  //     count = count + 1
+  //     console.log(count);
+  //  }
+   
+}
+  totalProduct();
+    
+   // //get the element to update
+
+  //  let allProducts = JSON.stringify(count);
+  //  // //update element text
+  //   const countProducts= document.querySelector("#countproducts")
+  //   countProducts.innerText = allProducts;
+  
+ 
+ 
+
+ 
+ 
+  
+
+
+
