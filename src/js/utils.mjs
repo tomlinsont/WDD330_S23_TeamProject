@@ -1,4 +1,5 @@
-import { addToCart } from "./productDetails.mjs";
+import productDetails from "./productDetails.mjs";
+import cartContents from "./productDetails.mjs";
 // wrapper for querySelector...returns matching element
 export function qs(selector, parent = document) {
   return parent.querySelector(selector);
@@ -89,19 +90,41 @@ export function loadHeaderFooter() {
 
 
 function totalProduct() {
-  //Get array from localstorage
-  const cart = getLocalStorage(addToCart);
-  //[ {id:"dsa`l;fkjsadf", count:1}, ]
+//   //Get array from localstorage
+  let cart = getLocalStorage("so-cart");
+  let getItem = JSON.parse(localStorage.getItem("Id"));
 
-  //count # items in each item`
-  let count = 0;
-    if(cart) {
-      count = cart.length();
-  }
-  //get the element to update
-  let allProducts = allProducts.map(count)
-  //update element text
-  const countProducts= document.querySelector("#countproducts")
-  countProducts.innerText = allProducts;
+    //[ {id:"dsa`l;fkjsadf", count:1}, ]
+   if(!cart) {
+     cart = [];
+     cart.push(getItem);
+      console.log(cart);
+    
+   }
+    // update count
+ // let count = 0;
+  // for each
+  //   for(let i=0; i < cart.length; i++){ 
+  //     count = count + 1
+  //     console.log(count);
+  //  }
+   
+}
+  totalProduct();
+    
+   // //get the element to update
 
-} 
+  //  let allProducts = JSON.stringify(count);
+  //  // //update element text
+  //   const countProducts= document.querySelector("#countproducts")
+  //   countProducts.innerText = allProducts;
+  
+ 
+ 
+
+ 
+ 
+  
+
+
+
