@@ -1,5 +1,6 @@
 import { findProductById } from "./productData.mjs";
-import { setLocalStorage, getLocalStorage } from "./utils.mjs";
+import { setLocalStorage, getLocalStorage} from "./utils.mjs";
+
 
 let product = {};
 
@@ -27,6 +28,8 @@ export function addToCart() {
   for(let i=0; i < cartContents.length; i++){ 
   console.log("cartContents: ", cartContents[i]);
   }
+  totalProduct();
+  
 }
 
 function renderProductDetails() {

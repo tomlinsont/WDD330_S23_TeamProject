@@ -84,42 +84,48 @@ export function loadHeaderFooter() {
   const footerEl = document.querySelector("#main-footer");
   renderWithTemplate(headerTemplate, headerEl);
   renderWithTemplate(footerTemplate, footerEl);
+
+
+  // let allProducts = count.toString();
+  // //  // //update element text
+  //  const countProducts= document.querySelector("#countproducts");
+  //  countProducts.textContent = allProducts;
 }
 
 
 
 
-function totalProduct() {
+export function totalProduct() {
 //   //Get array from localstorage
   let cart = getLocalStorage("so-cart");
-  let getItem = JSON.parse(localStorage.getItem("Id"));
 
-    //[ {id:"dsa`l;fkjsadf", count:1}, ]
-   if(!cart) {
-     cart = [];
-     cart.push(getItem);
-      console.log(cart);
-    
-   }
-    // update count
- // let count = 0;
-  // for each
-  //   for(let i=0; i < cart.length; i++){ 
-  //     count = count + 1
-  //     console.log(count);
-  //  }
+ // update count
+  let count = 0;
+  
+    for(let i=0; i < cart.length; i++){ 
+    count = count + 1
+ 
+      }
+    console.log(count);
+     setLocalStorage("i", count);
    
+
 }
+
   totalProduct();
+
     
    // //get the element to update
 
-  //  let allProducts = JSON.stringify(count);
-  //  // //update element text
-  //   const countProducts= document.querySelector("#countproducts")
-  //   countProducts.innerText = allProducts;
-  
- 
+//   let allProducts = count.toString();
+//   //  // //update element text
+//    const countProducts= document.querySelector("#countproducts");
+//    countProducts.textContent = allProducts;
+
+
+  //get the num of product from localStorage
+
+
  
 
  
