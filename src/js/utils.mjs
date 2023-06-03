@@ -85,11 +85,6 @@ export function loadHeaderFooter() {
   renderWithTemplate(headerTemplate, headerEl);
   renderWithTemplate(footerTemplate, footerEl);
 
-
-  // let allProducts = count.toString();
-  // //  // //update element text
-  //  const countProducts= document.querySelector("#countproducts");
-  //  countProducts.textContent = allProducts;
 }
 
 
@@ -116,10 +111,9 @@ export function totalProduct() {
   const countProducts= document.querySelector("#countproducts");
   countProducts.textContent = allProducts;
 
-
 }
 
-  
+
 
 
 
