@@ -1,5 +1,5 @@
-import productDetails from "./productDetails.mjs";
-import cartContents from "./productDetails.mjs";
+// import productDetails from "./productDetails.mjs";
+// import addToCart from "./productDetails.mjs";
 // wrapper for querySelector...returns matching element
 export function qs(selector, parent = document) {
   return parent.querySelector(selector);
@@ -107,12 +107,12 @@ export function totalProduct() {
  
       }
     console.log(count);
-     setLocalStorage("i", count);
+    setLocalStorage("i", count);
    
 
 }
 
-  totalProduct();
+  //totalProduct();
 
     
    // //get the element to update
