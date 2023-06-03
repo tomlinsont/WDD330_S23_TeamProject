@@ -109,21 +109,20 @@ export function totalProduct() {
     console.log(count);
     setLocalStorage("i", count);
    
+        
+//get the element to update
+  let allProducts = count.toString();
+// update element text
+  const countProducts= document.querySelector("#countproducts");
+  countProducts.textContent = allProducts;
+
 
 }
 
-  //totalProduct();
-
-    
-   // //get the element to update
-
-//   let allProducts = count.toString();
-//   //  // //update element text
-//    const countProducts= document.querySelector("#countproducts");
-//    countProducts.textContent = allProducts;
+  
 
 
-  //get the num of product from localStorage
+
 
 
  
