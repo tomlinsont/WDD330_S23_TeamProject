@@ -4,6 +4,7 @@ export default function ShoppingCart() {
   const cartItems = getLocalStorage("so-cart");
   const outputEl = document.querySelector(".product-list");
   renderListWithTemplate(cartItemTemplate, outputEl, cartItems);
+  itemsInCart();
 }
 
 function cartItemTemplate(item) {
@@ -24,3 +25,32 @@ function cartItemTemplate(item) {
 
   return newItem;
 }
+
+function itemsInCart() {
+  const numInCart = getCalcNumCartItems();
+
+  showNumberOfCartItems(numInCart);
+
+}
+
+// calcuates number of items in cart
+function getCalcNumCartItems() {
+  const cartItems = getLocalStorage("so-cart");
+  console.log("cart items: ", cartItems);
+
+  let numberInCart = cartItems.length;
+
+  return numberInCart;
+}
+
+function showNumberOfCartItems(items) {
+  console.log("Total Items: ", items);
+
+  if (items >= 1) {
+  let el = document.getElementById("numberOfItems");
+  el.classList.add("cart_numOfItems"); 
+  document.getElementById("total_items_in_cart").innerHTML = items;
+  }
+}
+
+
