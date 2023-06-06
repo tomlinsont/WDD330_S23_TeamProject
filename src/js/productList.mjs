@@ -1,12 +1,6 @@
 import { getProductsByCategory } from "./externalServices.mjs";
 import { renderListWithTemplate } from "./utils.mjs";
 
-/*
-function renderList(list, elem) {
-    const htmlStrings =  list.map(productCardTemplate);
-    CustomElementRegistry.insertAdjacentHTML('afterbegin', htmlStrings.join(''));
-}
-*/
 
 function productCardTemplate(product) {
     return `<li class="product-card">
