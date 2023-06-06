@@ -1,5 +1,6 @@
 import productDetails from "./productDetails.mjs";
 import cartContents from "./productDetails.mjs";
+
 // wrapper for querySelector...returns matching element
 export function qs(selector, parent = document) {
   return parent.querySelector(selector);
