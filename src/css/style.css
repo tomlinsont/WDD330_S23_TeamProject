@@ -90,7 +90,7 @@ button {
   padding: 0.5em 2em;
   background-color: var(--secondary-color);
   color: white;
-  margin: auto;
+  margin: 2% auto;
   display: block;
   border: 0;
   font-size: var(--large-font);
@@ -130,6 +130,28 @@ button {
 }
 .cart:hover svg {
   fill: gray;
+}
+
+.cart_numOfItems {
+  width: 30px;
+  height: 30px;
+  background-color: #88730c;
+  margin: 10% auto;
+  position: absolute;
+  top: -5px;
+  right: 15px;
+  border-radius: 8px;
+}
+.items_total {
+  font-size: 2vh;
+  color: #f0eeee;
+  text-shadow: 2px 2px black;
+  position: absolute;
+  width: inherit;
+  height: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
 }
 
 /* End cart icon styles */
@@ -222,6 +244,36 @@ button {
 .cart-card__price {
   grid-row: 2;
   grid-column: 3;
+}
+
+/* checkout styles */
+.checkout-form {
+  padding: 0.5em;
+  width: 50%;
+}
+.checkout-form label {
+  display: block;
+}
+.checkout-form input {
+  width: 100%;
+  font-size: 1.2em;
+}
+.checkout-form fieldset {
+  margin-bottom: 1rem;
+}
+
+.checkout-summary > ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+.checkout-summary li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.checkout-summary input {
+  width: 25%;
+  font-size: 1em;
 }
 
 @media screen and (min-width: 500px) {
