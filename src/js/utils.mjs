@@ -1,5 +1,6 @@
 import productDetails from "./productDetails.mjs";
 import cartContents from "./productDetails.mjs";
+
 // wrapper for querySelector...returns matching element
 export function qs(selector, parent = document) {
   return parent.querySelector(selector);
@@ -77,54 +78,11 @@ function loadTemplate(path) {
   };
 } 
 
-export function loadHeaderFooter() {
-  const headerTemplate = loadTemplate("/partials/header.html");
-  const footerTemplate = loadTemplate("/partials/footer.html");
+export async function loadHeaderFooter() {
+  const headerTemplate = await loadTemplate("/partials/header.html");
+  const footerTemplate = await loadTemplate("/partials/footer.html");
   const headerEl = document.querySelector("#main-header");
   const footerEl = document.querySelector("#main-footer");
-  renderWithTemplate(headerTemplate, headerEl);
-  renderWithTemplate(footerTemplate, footerEl);
+  await renderWithTemplate(headerTemplate, headerEl);
+  await renderWithTemplate(footerTemplate, footerEl);
 }
-
-
-
-
-function totalProduct() {
-//   //Get array from localstorage
-  let cart = getLocalStorage("so-cart");
-  let getItem = JSON.parse(localStorage.getItem("Id"));
-
-    //[ {id:"dsa`l;fkjsadf", count:1}, ]
-   if(!cart) {
-     cart = [];
-     cart.push(getItem);
-      console.log(cart);
-    
-   }
-    // update count
- // let count = 0;
-  // for each
-  //   for(let i=0; i < cart.length; i++){ 
-  //     count = count + 1
-  //     console.log(count);
-  //  }
-   
-}
-  totalProduct();
-    
-   // //get the element to update
-
-  //  let allProducts = JSON.stringify(count);
-  //  // //update element text
-  //   const countProducts= document.querySelector("#countproducts")
-  //   countProducts.innerText = allProducts;
-  
- 
- 
-
- 
- 
-  
-
-
-
