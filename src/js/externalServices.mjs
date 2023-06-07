@@ -1,7 +1,7 @@
-//const baseURL = 'https://wdd330-backend.onrender.com/';
-// changed from http://server-nodejs.cit.byui.edu:3000/checkout
+const baseURL = 'https://wdd330-backend.onrender.com/';
+// const baseURL = 'http://server-nodejs.cit.byui.edu:3000/checkout';
 
-const baseURL = import.meta.env.VITE_SERVER_URL
+//const baseURL = import.meta.env.VITE_SERVER_URL
 
 function convertToJson(res) {
   if (res.ok) {
