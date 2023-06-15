@@ -27,5 +27,9 @@ export default async function productList(selector, category) {
     
     // render out the product list to the element
     renderListWithTemplate(productCardTemplate, elem, products);
-    document.querySelector(".title").innerHTML = category;
+    const firstLetter = category.charAt(0);
+    const firstLetterCap = firstLetter.toUpperCase();
+    const remainingLetters = category.slice(1);
+    const categoryCapitalized = firstLetterCap + remainingLetters;
+    document.querySelector(".title").innerHTML = categoryCapitalized;
 }
