@@ -1,9 +1,10 @@
 //const baseURL = 'https://wdd330-backend.onrender.com/';
- //const baseURL = 'http://server-nodejs.cit.byui.edu:3000/';
+// const baseURL = 'http://server-nodejs.cit.byui.edu:3000/';
 
 const baseURL = import.meta.env.VITE_SERVER_URL
 
 async function convertToJson(res) {
+  const data = await res.json();
   if (res.ok) {
     return res.json();
   } else {
@@ -67,10 +68,11 @@ export async function loginRequest(user) {
 export async function getOrders(token) {
   const options = {
     method: "GET",
+    // the server will reject our request if we don't include the Authorization header with a valid token!
     headers: {
-      'Authorization': `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     },
   };
-  const response =  await fetch(baseURL + "orders", options).then(convertToJson);
+  const response = await fetch(baseURL + "orders", options).then(convertToJson);
   return response;
 }

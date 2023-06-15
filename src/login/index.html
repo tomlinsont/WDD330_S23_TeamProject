@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sleep Outside | Home</title>
 
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
 
     <script src="../js/login.js" type="module"></script>
   </head>
@@ -19,14 +19,21 @@
             <form name="login">
               <fieldset>
                 <legend>User Login</legend>
-                <div class="login__name">
-                  <label for="fname">Username/Email: </label>
-                  <input type="email" placeholder="email" id="email" required />
-                  <label for="password">Password: </label>
-                  <input type="password" placeholder="password" id="password" required />
-                </div>
-              </fieldset>  
-              <button id="loginSubmit" type="submit">Login</button>
+                <p>
+                  <label for="email">Email</label>
+                  <input
+                    type="text"
+                    placeholder="email"
+                    id="email"
+                    value="user1@email.com"
+                  />
+                </p>
+                <p>
+                  <label for="password">Password</label>
+                  <input type="password" placeholder="password" id="password" />
+                </p>
+                <button type="submit" id="loginButton" >Login</button>
+              </fieldset>                
             </form>
           </section>
         </section>
