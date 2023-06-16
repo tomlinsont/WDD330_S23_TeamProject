@@ -4,7 +4,6 @@
 const baseURL = import.meta.env.VITE_SERVER_URL
 
 async function convertToJson(res) {
-  const data = await res.json();
   if (res.ok) {
     return res.json();
   } else {
