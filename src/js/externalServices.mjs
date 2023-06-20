@@ -1,13 +1,15 @@
-const baseURL = 'https://wdd330-backend.onrender.com/';
-// const baseURL = 'http://server-nodejs.cit.byui.edu:3000/checkout';
+//const baseURL = 'https://wdd330-backend.onrender.com/';
+// const baseURL = 'http://server-nodejs.cit.byui.edu:3000/';
 
-//const baseURL = import.meta.env.VITE_SERVER_URL
+const baseURL = import.meta.env.VITE_SERVER_URL
 
 async function convertToJson(res) {
   if (res.ok) {
-    return res.json();
+    //return res.json();
+    return await res.json();
   } else {
-    throw { name: 'servicesError', message: jsonResponse };
+    //throw { name: 'servicesError', message: jsonResponse };
+    throw { name: 'servicesError', message: res.statusText };
   }
 }
 
@@ -34,8 +36,8 @@ export async function findProductById(id) {
 
 export async function findProductById(id) {
   const response = await fetch(baseURL + `product/${id}`);
-    const product = await convertToJson(response);
-    return product.Result;
+  const product = await convertToJson(response);
+  return product.Result;
 }
 
 export async function checkout(payload) {
@@ -47,4 +49,31 @@ export async function checkout(payload) {
     body: JSON.stringify(payload),
   };
   return await fetch(baseURL + "checkout/", options).then(convertToJson);
+}
+
+export async function loginRequest(user) {
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(user),
+  };
+  const response = await fetch(baseURL + "login", options).then(convertToJson);
+  return response.accessToken;
+}
+
+// make a request to the server for the current orders
+// requires: a valid token
+// returns: a list of orders
+export async function getOrders(token) {
+  const options = {
+    method: "GET",
+    // the server will reject our request if we don't include the Authorization header with a valid token!
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  const response = await fetch("http://server-nodejs.cit.byui.edu:3000/orders", options).then(convertToJson);
+  return response;
 }
