@@ -247,18 +247,19 @@ button {
 }
 
 /* checkout styles */
-.checkout-form {
+.checkout-form, .login-form {
   padding: 0.5em;
   width: 50%;
 }
-.checkout-form label {
+.checkout-form label, .login-form label {
   display: block;
 }
-.checkout-form input {
+.checkout-form input, .login-form input{
   width: 100%;
   font-size: 1.2em;
+  margin-bottom: 0.5em;
 }
-.checkout-form fieldset {
+.checkout-form fieldset, .login-form fieldset {
   margin-bottom: 1rem;
 }
 
