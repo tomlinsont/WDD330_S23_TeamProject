@@ -48,3 +48,32 @@ export async function checkout(payload) {
   };
   return await fetch(baseURL + "checkout/", options).then(convertToJson);
 }
+
+export async function loginRequest(creds) {
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(creds),
+  };
+
+  const response = await fetch( "http://server-nodejs.cit.byui.edu:3000/login", options).then(convertToJson);
+
+  return response.accessToken;
+}
+
+// make a request to the server for the current orders
+// requires: a valid token
+// returns: a list of orders
+export async function getOrders(token) {
+  const options = {
+    method: "GET",
+    // the server will reject our request if we don't include the Authorization header with a valid token!
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  const response = await fetch("http://server-nodejs.cit.byui.edu:3000/orders", options).then(convertToJson);
+  return response;
+}
